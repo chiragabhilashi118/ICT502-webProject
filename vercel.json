@@ -1,4 +1,9 @@
 {
   "version": 2,
-  "public": true
+  "public": true,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/pages/(.*)", "dest": "/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
 }
