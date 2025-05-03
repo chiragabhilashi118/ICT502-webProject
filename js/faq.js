@@ -93,35 +93,4 @@ document.addEventListener('DOMContentLoaded', function() {
         item.style.transition = 'all 0.5s ease-out';
         observer.observe(item);
     });
-
-    // Mobile menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinkItems = document.querySelectorAll('.nav-links a');
-
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
-    });
-
-    // Handle link clicks
-    navLinkItems.forEach(link => {
-        link.addEventListener('click', function(event) {
-            // Only handle mobile menu for mobile view
-            if (window.innerWidth <= 768) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-            // Allow the link to work normally
-            return true;
-        });
-    });
 }); 
