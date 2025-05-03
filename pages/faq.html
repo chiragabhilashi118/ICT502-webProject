@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - FinAdvisor</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>FinAdvisor</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/pages/index.html">Home</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/calculator.html">Calculators</a>
+            <a href="/pages/blog.html">Resources</a>
+            <a href="/pages/testimonials.html">Testimonials</a>
+            <a href="/pages/faq.html" class="active">FAQ</a>
+            <a href="/pages/contact.html">Contact</a>
+        </div>
+        <div class="profile-button">
+            <a href="/pages/profile.html" class="profile-link">
+                <i class="fas fa-user-circle"></i>
+                Profile
+            </a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- FAQ Header -->
+    <section class="faq-header">
+        <div class="header-content">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about our services and financial planning</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" placeholder="Search questions..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-categories">
+        <button class="category-btn active" data-category="all">All Questions</button>
+        <button class="category-btn" data-category="services">Services</button>
+        <button class="category-btn" data-category="fees">Fees & Pricing</button>
+        <button class="category-btn" data-category="process">Process</button>
+        <button class="category-btn" data-category="investment">Investment</button>
+        <button class="category-btn" data-category="retirement">Retirement</button>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-accordion">
+        <!-- Services Category -->
+        <div class="faq-item" data-category="services">
+            <div class="faq-question">
+                <h3>What financial services do you offer?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We offer a comprehensive range of financial services including retirement planning, investment management, tax planning, estate planning, and mortgage advice. Our team of certified financial advisors works with you to create a personalized financial strategy that aligns with your goals.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="services">
+            <div class="faq-question">
+                <h3>How do you differ from other financial advisors?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We take a holistic approach to financial planning, considering all aspects of your financial life. Our advisors are fiduciaries, meaning we always act in your best interest. We also provide ongoing support and regular reviews to ensure your financial plan stays on track.</p>
+            </div>
+        </div>
+
+        <!-- Fees & Pricing Category -->
+        <div class="faq-item" data-category="fees">
+            <div class="faq-question">
+                <h3>How are your fees structured?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Our fees are transparent and based on the services you require. We offer both fee-only and commission-based options, depending on your needs. During our initial consultation, we'll discuss the fee structure that best suits your situation.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="fees">
+            <div class="faq-question">
+                <h3>Is there a minimum investment amount?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We work with clients at various stages of their financial journey. While some of our investment services have minimum requirements, we offer financial planning services for all asset levels. Contact us to discuss your specific situation.</p>
+            </div>
+        </div>
+
+        <!-- Process Category -->
+        <div class="faq-item" data-category="process">
+            <div class="faq-question">
+                <h3>What is your financial planning process?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Our process begins with an initial consultation to understand your goals and current financial situation. We then develop a comprehensive plan, implement the recommended strategies, and provide ongoing monitoring and adjustments as needed.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="process">
+            <div class="faq-question">
+                <h3>How often will we meet?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We typically meet quarterly to review your progress and make any necessary adjustments. However, we're available whenever you need us and can adjust the meeting frequency based on your preferences and needs.</p>
+            </div>
+        </div>
+
+        <!-- Investment Category -->
+        <div class="faq-item" data-category="investment">
+            <div class="faq-question">
+                <h3>What is your investment philosophy?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We believe in a long-term, diversified investment approach based on your risk tolerance and financial goals. We focus on asset allocation, regular rebalancing, and cost-effective investment vehicles to maximize returns while managing risk.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="investment">
+            <div class="faq-question">
+                <h3>How do you handle market volatility?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We help clients stay focused on their long-term goals during market fluctuations. Our investment strategies are designed to weather market volatility, and we provide regular communication and education to help you understand market movements.</p>
+            </div>
+        </div>
+
+        <!-- Retirement Category -->
+        <div class="faq-item" data-category="retirement">
+            <div class="faq-question">
+                <h3>When should I start retirement planning?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>The earlier you start planning for retirement, the better. However, it's never too late to begin. We help clients at all stages of life create and implement retirement strategies that align with their goals and timeline.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-category="retirement">
+            <div class="faq-question">
+                <h3>How much do I need to save for retirement?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>The amount needed for retirement varies based on your lifestyle, goals, and current savings. We use sophisticated retirement planning tools to help you determine your target savings amount and create a plan to achieve it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-content">
+            <h2>Still Have Questions?</h2>
+            <p>Contact us for personalized answers to your specific financial questions</p>
+            <a href="/pages/contact.html" class="contact-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FinAdvisor</h3>
+                <p>Your trusted partner in financial planning</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/pages/index.html">Home</a>
+                <a href="/pages/about.html">About</a>
+                <a href="/pages/services.html">Services</a>
+                <a href="/pages/contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@finadvisor.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Financial Street, City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FinAdvisor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/faq.js"></script>
+</body>
+</html> 

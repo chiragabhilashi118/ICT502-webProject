@@ -1,0 +1,218 @@
+/* Calculator Section */
+.calculator-section {
+    padding: 8rem 5%;
+    background-color: var(--light-gray);
+}
+
+.calculator-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Calculator Header */
+.calculator-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../assets/calculator-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8rem 5%;
+    text-align: center;
+    color: var(--white);
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Calculator Navigation */
+.calculator-nav {
+    background-color: var(--white);
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Calculator Tabs */
+.calculator-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--light-gray);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.tab-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.tab-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Calculator Content */
+.calculator-content {
+    padding: 3rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calculator {
+    display: none;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.calculator.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.calculator h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* Calculator Form */
+.calculator-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.calculate-btn {
+    grid-column: 1 / -1;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    justify-self: center;
+}
+
+.calculate-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Calculator Results */
+.calculator-result {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.calculator-result h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.result-item span:first-child {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.result-item span:last-child {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.result-chart {
+    margin-top: 2rem;
+    height: 300px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calculator-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .calculator-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .calculator-form {
+        grid-template-columns: 1fr;
+    }
+} 

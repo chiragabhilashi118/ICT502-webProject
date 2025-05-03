@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Financial Advisory Services</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>FinAdvisor</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/pages/index.html">Home</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/calculator.html">Calculators</a>
+            <a href="/pages/blog.html">Resources</a>
+            <a href="/pages/testimonials.html">Testimonials</a>
+            <a href="/pages/faq.html">FAQ</a>
+            <a href="/pages/contact.html">Contact</a>
+        </div>
+        <div class="profile-button">
+            <a href="/pages/profile.html" class="profile-link active">
+                <i class="fas fa-user-circle"></i>
+                Profile
+            </a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img id="profileImage" src="../assets/default-avatar.png" alt="Profile Picture">
+                    <div class="avatar-upload">
+                        <label for="avatarInput" class="upload-btn">
+                            <i class="fas fa-camera"></i>
+                            <span>Change Photo</span>
+                        </label>
+                        <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <h1>My Profile</h1>
+            </div>
+            <div class="profile-info">
+                <div class="info-group">
+                    <h2>Personal Information</h2>
+                    <div class="info-field">
+                        <label>Name:</label>
+                        <span id="userName">John Doe</span>
+                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                    </div>
+                    <div class="info-field">
+                        <label>Email:</label>
+                        <span id="userEmail">john.doe@example.com</span>
+                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                    </div>
+                    <div class="info-field">
+                        <label>Phone:</label>
+                        <span id="userPhone">+1 234 567 890</span>
+                        <button class="edit-btn"><i class="fas fa-edit"></i></button>
+                    </div>
+                </div>
+                <div class="info-group">
+                    <h2>Account Settings</h2>
+                    <div class="info-field">
+                        <label>Password:</label>
+                        <span>********</span>
+                        <button class="edit-btn"><i class="fas fa-key"></i> Change Password</button>
+                    </div>
+                    <div class="info-field">
+                        <label>Notifications:</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="notifications" checked>
+                            <label for="notifications"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="save-btn">Save Changes</button>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FinAdvisor</h3>
+                <p>Your trusted partner in financial planning</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/pages/index.html">Home</a>
+                <a href="/pages/about.html">About</a>
+                <a href="/pages/services.html">Services</a>
+                <a href="/pages/contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@finadvisor.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Financial Street, City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FinAdvisor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userDetails');
+            window.location.href = 'login.html';
+        }
+
+        // Check if user is logged in
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get user details from localStorage
+            const userDetails = JSON.parse(localStorage.getItem('userDetails')) || {
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                notifications: true,
+                profilePicture: null
+            };
+
+            // Display user details
+            const userName = document.getElementById('userName');
+            const userEmail = document.getElementById('userEmail');
+            const userPhone = document.getElementById('userPhone');
+            const notificationsToggle = document.getElementById('notifications');
+            const profileImage = document.getElementById('profileImage');
+
+            userName.textContent = userDetails.firstName + ' ' + userDetails.lastName;
+            userEmail.textContent = userDetails.email;
+            userPhone.textContent = userDetails.phone;
+            notificationsToggle.checked = userDetails.notifications;
+
+            // Set profile picture if exists
+            if (userDetails.profilePicture) {
+                profileImage.src = userDetails.profilePicture;
+            }
+
+            // Handle profile picture upload
+            const avatarInput = document.getElementById('avatarInput');
+            avatarInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    if (file.size > 5000000) { // 5MB limit
+                        alert('File is too large. Please choose an image under 5MB.');
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        profileImage.src = event.target.result;
+                        userDetails.profilePicture = event.target.result;
+                        localStorage.setItem('userDetails', JSON.stringify(userDetails));
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Handle notifications toggle
+            notificationsToggle.addEventListener('change', function() {
+                userDetails.notifications = this.checked;
+                localStorage.setItem('userDetails', JSON.stringify(userDetails));
+            });
+
+            // Add event listeners for edit buttons
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const field = this.parentElement;
+                    const span = field.querySelector('span');
+                    const currentValue = span.textContent;
+                    
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.value = currentValue;
+                    input.className = 'edit-input';
+                    
+                    span.replaceWith(input);
+                    input.focus();
+                    
+                    input.addEventListener('blur', function() {
+                        const newSpan = document.createElement('span');
+                        newSpan.textContent = this.value;
+                        this.replaceWith(newSpan);
+
+                        // Update userDetails based on the field being edited
+                        if (field.querySelector('label').textContent === 'Name:') {
+                            const [firstName, lastName] = this.value.split(' ');
+                            userDetails.firstName = firstName;
+                            userDetails.lastName = lastName || '';
+                        } else if (field.querySelector('label').textContent === 'Email:') {
+                            userDetails.email = this.value;
+                        } else if (field.querySelector('label').textContent === 'Phone:') {
+                            userDetails.phone = this.value;
+                        }
+
+                        // Save updated details to localStorage
+                        localStorage.setItem('userDetails', JSON.stringify(userDetails));
+                    });
+                });
+            });
+
+            // Handle save changes button
+            const saveBtn = document.querySelector('.save-btn');
+            if (saveBtn) {
+                saveBtn.addEventListener('click', function() {
+                    alert('Changes saved successfully!');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

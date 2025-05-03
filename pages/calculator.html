@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculators - FinAdvisor</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>FinAdvisor</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/pages/index.html">Home</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/calculator.html" class="active">Calculators</a>
+            <a href="/pages/blog.html">Resources</a>
+            <a href="/pages/testimonials.html">Testimonials</a>
+            <a href="/pages/faq.html">FAQ</a>
+            <a href="/pages/contact.html">Contact</a>
+        </div>
+        <div class="profile-button">
+            <a href="/pages/profile.html" class="profile-link">
+                <i class="fas fa-user-circle"></i>
+                Profile
+            </a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Calculator Header -->
+    <section class="calculator-header">
+        <div class="header-content">
+            <h1 class="fade-in visible" style="color: #fff;">Financial Calculators</h1>
+            <p class="fade-in visible" style="color: #fff;">Make informed financial decisions with our easy-to-use calculators</p>
+        </div>
+    </section>
+
+    <!-- Calculator Navigation -->
+    <section class="calculator-nav">
+        <div class="calculator-tabs">
+            <button class="tab-btn active" data-tab="retirement">Retirement Calculator</button>
+            <button class="tab-btn" data-tab="mortgage">Mortgage Calculator</button>
+            <button class="tab-btn" data-tab="investment">Investment Calculator</button>
+            <button class="tab-btn" data-tab="loan">Loan Calculator</button>
+        </div>
+    </section>
+
+    <!-- Calculator Content -->
+    <section class="calculator-content">
+        <!-- Retirement Calculator -->
+        <div class="calculator active" id="retirement">
+            <h2 class="fade-in visible" style="color: #fff;">Retirement Calculator</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="current-age">Current Age</label>
+                    <input type="number" id="current-age" min="18" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="retirement-age">Retirement Age</label>
+                    <input type="number" id="retirement-age" min="18" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="current-savings">Current Savings ($)</label>
+                    <input type="number" id="current-savings" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="monthly-contribution">Monthly Contribution ($)</label>
+                    <input type="number" id="monthly-contribution" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="annual-return">Expected Annual Return (%)</label>
+                    <input type="number" id="annual-return" min="0" max="20" step="0.1" required>
+                </div>
+                <button type="button" class="calculate-btn">Calculate</button>
+            </div>
+            <div class="calculator-result">
+                <h3>Retirement Projection</h3>
+                <div class="result-item">
+                    <span>Total Savings at Retirement:</span>
+                    <span id="total-savings">$0</span>
+                </div>
+                <div class="result-item">
+                    <span>Monthly Income (4% Rule):</span>
+                    <span id="monthly-income">$0</span>
+                </div>
+                <div class="result-chart">
+                    <canvas id="retirement-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mortgage Calculator -->
+        <div class="calculator" id="mortgage">
+            <h2 class="fade-in visible" style="color: #fff;">Mortgage Calculator</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="home-price">Home Price ($)</label>
+                    <input type="number" id="home-price" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="down-payment">Down Payment ($)</label>
+                    <input type="number" id="down-payment" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="loan-term">Loan Term (Years)</label>
+                    <input type="number" id="loan-term" min="1" max="30" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest-rate">Interest Rate (%)</label>
+                    <input type="number" id="interest-rate" min="0" max="20" step="0.1" required>
+                </div>
+                <button type="button" class="calculate-btn">Calculate</button>
+            </div>
+            <div class="calculator-result">
+                <h3>Mortgage Details</h3>
+                <div class="result-item">
+                    <span>Monthly Payment:</span>
+                    <span id="monthly-payment">$0</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Interest:</span>
+                    <span id="total-interest">$0</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Cost:</span>
+                    <span id="total-cost">$0</span>
+                </div>
+                <div class="result-chart">
+                    <canvas id="mortgage-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investment Calculator -->
+        <div class="calculator" id="investment">
+            <h2 class="fade-in visible" style="color: #fff;">Investment Calculator</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="initial-investment">Initial Investment ($)</label>
+                    <input type="number" id="initial-investment" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="monthly-contribution-investment">Monthly Contribution ($)</label>
+                    <input type="number" id="monthly-contribution-investment" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="investment-period">Investment Period (Years)</label>
+                    <input type="number" id="investment-period" min="1" max="50" required>
+                </div>
+                <div class="form-group">
+                    <label for="expected-return">Expected Annual Return (%)</label>
+                    <input type="number" id="expected-return" min="0" max="20" step="0.1" required>
+                </div>
+                <button type="button" class="calculate-btn">Calculate</button>
+            </div>
+            <div class="calculator-result">
+                <h3>Investment Projection</h3>
+                <div class="result-item">
+                    <span>Total Investment:</span>
+                    <span id="total-investment">$0</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Return:</span>
+                    <span id="total-return">$0</span>
+                </div>
+                <div class="result-item">
+                    <span>Final Balance:</span>
+                    <span id="final-balance">$0</span>
+                </div>
+                <div class="result-chart">
+                    <canvas id="investment-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loan Calculator -->
+        <div class="calculator" id="loan">
+            <h2 class="fade-in visible" style="color: #fff;">Loan Calculator</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="loan-amount">Loan Amount ($)</label>
+                    <input type="number" id="loan-amount" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="loan-term-years">Loan Term (Years)</label>
+                    <input type="number" id="loan-term-years" min="1" max="30" required>
+                </div>
+                <div class="form-group">
+                    <label for="loan-interest-rate">Interest Rate (%)</label>
+                    <input type="number" id="loan-interest-rate" min="0" max="20" step="0.1" required>
+                </div>
+                <button type="button" class="calculate-btn">Calculate</button>
+            </div>
+            <div class="calculator-result">
+                <h3>Loan Details</h3>
+                <div class="result-item">
+                    <span>Monthly Payment:</span>
+                    <span id="loan-monthly-payment">$0</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Interest:</span>
+                    <span id="loan-total-interest">$0</span>
+                </div>
+                <div class="result-item">
+                    <span>Total Payment:</span>
+                    <span id="loan-total-payment">$0</span>
+                </div>
+                <div class="result-chart">
+                    <canvas id="loan-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FinAdvisor</h3>
+                <p>Your trusted partner in financial planning</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="/pages/index.html">Home</a>
+                <a href="/pages/about.html">About</a>
+                <a href="/pages/services.html">Services</a>
+                <a href="/pages/contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@finadvisor.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Financial Street, City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FinAdvisor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/calculator.js"></script>
+    <script>
+      if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'login.html';
+      }
+    </script>
+</body>
+</html> 

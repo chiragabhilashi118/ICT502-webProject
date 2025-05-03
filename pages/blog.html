@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Resources & Blog - FinAdvisor</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>FinAdvisor</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/pages/index.html">Home</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/calculator.html">Calculators</a>
+            <a href="/pages/blog.html" class="active">Resources</a>
+            <a href="/pages/testimonials.html">Testimonials</a>
+            <a href="/pages/faq.html">FAQ</a>
+            <a href="/pages/contact.html">Contact</a>
+        </div>
+        <div class="profile-button">
+            <a href="/pages/profile.html" class="profile-link">
+                <i class="fas fa-user-circle"></i>
+                Profile
+            </a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="header-content">
+            <h1>Financial Resources & Insights</h1>
+            <p>Stay informed with our latest articles and educational resources</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="search-filter">
+        <div class="search-container">
+            <input type="text" placeholder="Search articles..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="retirement">Retirement</button>
+            <button class="filter-btn" data-category="investment">Investment</button>
+            <button class="filter-btn" data-category="tax">Tax Planning</button>
+            <button class="filter-btn" data-category="mortgage">Mortgage</button>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-article">
+        <div class="featured-content">
+            <div class="featured-image">
+                <img src="../assets/featured-article.jpg" alt="Featured Article">
+                <div class="category-tag">Investment</div>
+            </div>
+            <div class="featured-text">
+                <h2>Understanding Market Volatility: A Guide for Investors</h2>
+                <p class="meta">By John Smith | May 1, 2024 | 5 min read</p>
+                <p class="excerpt">Learn how to navigate market volatility and make informed investment decisions during uncertain times...</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid">
+        <article class="blog-card" data-category="retirement">
+            <div class="card-image">
+                <img src="../assets/retirement-planning.jpg" alt="Retirement Planning">
+                <div class="category-tag">Retirement</div>
+            </div>
+            <div class="card-content">
+                <h3>5 Essential Steps for Early Retirement Planning</h3>
+                <p class="meta">By Sarah Johnson | April 25, 2024 | 4 min read</p>
+                <p class="excerpt">Discover the key strategies to start planning for your retirement early and secure your financial future...</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="tax">
+            <div class="card-image">
+                <img src="../assets/tax-planning.jpg" alt="Tax Planning">
+                <div class="category-tag">Tax Planning</div>
+            </div>
+            <div class="card-content">
+                <h3>Tax Planning Strategies for 2024</h3>
+                <p class="meta">By Michael Brown | April 20, 2024 | 6 min read</p>
+                <p class="excerpt">Stay ahead of tax changes and optimize your financial strategy with these expert tips...</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="mortgage">
+            <div class="card-image">
+                <img src="../assets/mortgage-advice.jpg" alt="Mortgage Advice">
+                <div class="category-tag">Mortgage</div>
+            </div>
+            <div class="card-content">
+                <h3>First-Time Home Buyer's Guide to Mortgages</h3>
+                <p class="meta">By Emily Davis | April 15, 2024 | 7 min read</p>
+                <p class="excerpt">Everything you need to know about mortgages when buying your first home...</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="investment">
+            <div class="card-image">
+                <img src="../assets/investment-strategies.jpg" alt="Investment Strategies">
+                <div class="category-tag">Investment</div>
+            </div>
+            <div class="card-content">
+                <h3>Building a Diversified Investment Portfolio</h3>
+                <p class="meta">By Robert Wilson | April 10, 2024 | 5 min read</p>
+                <p class="excerpt">Learn how to create a balanced investment portfolio that aligns with your financial goals...</p>
+                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Stay Updated with Our Latest Insights</h2>
+            <p>Subscribe to our newsletter for regular financial tips and updates</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FinAdvisor</h3>
+                <p>Your trusted partner in financial planning</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@finadvisor.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Financial Street, City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FinAdvisor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/blog.js"></script>
+</body>
+</html> 
