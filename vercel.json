@@ -1,12 +1,11 @@
 {
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/pages/index.html"
-    },
-    {
-      "source": "/pages/(.*)",
-      "destination": "/pages/$1"
-    }
+  "version": 2,
+  "public": true,
+  "builds": [
+    { "src": "pages/**/*.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/pages/$1" },
+    { "src": "/", "dest": "/pages/index.html" }
   ]
 }
